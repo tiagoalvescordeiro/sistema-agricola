@@ -1,0 +1,11 @@
+Umidade: 45.00 % | P: 1 | K: 1 | pH: 6.75
+Umidade: 28.00 % | P: 0 | K: 1 | pH: 5.20
+Umidade: 65.00 % | P: 1 | K: 0 | pH: 7.80
+Umidade: 22.50 % | P: 0 | K: 0 | pH: 4.90
+Umidade: 55.00 % | P: 1 | K: 1 | pH: 6.40
+Umidade: 31.00 % | P: 0 | K: 1 | pH: 7.10
+Umidade: 29.50 % | P: 1 | K: 0 | pH: 5.80
+Umidade: 45.00 % | P: 1 | K: 1 | pH: 6.75
+Umidade: 28.00 % | P: 0 | K: 1 | pH: 5.20
+Umidade: 65.00 % | P: 1 | K: 0 | pH: 7.80
+Umidade: 22.50 % | P: 0 | K: 0 | pH: 4.90
