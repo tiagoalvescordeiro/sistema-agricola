@@ -23,12 +23,14 @@ A bomba de irrigação é ativada **quando qualquer** uma das seguintes condiç�
 - Ausência de potássio (botão de potássio solto)
 - pH fora da faixa ideal (5.5 a 7.5)
 
-```cpp
+
+
 if (umidade < 30 || !fosforo || !potassio || ph < 5.5 || ph > 7.5) {
   digitalWrite(RELE_PIN, HIGH); // Liga a bomba
 } else {
   digitalWrite(RELE_PIN, LOW);  // Desliga a bomba
 }
+
 ## 🎥 Simulação do Circuito
 
 ![Simulação do sistema](./simulacao.gif)
