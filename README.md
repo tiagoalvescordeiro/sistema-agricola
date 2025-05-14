@@ -23,7 +23,7 @@ A bomba de irrigação é ativada **quando qualquer** uma das seguintes condiç�
 - Ausência de potássio (botão de potássio solto)
 - pH fora da faixa ideal (5.5 a 7.5)
 
-- 
+  
 ## 🎥 Simulação do Circuito
 
 ![Simulação do sistema](./simulacao.gif)
