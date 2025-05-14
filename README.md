@@ -29,13 +29,14 @@ A bomba de irrigação é ativada **quando qualquer** uma das seguintes condiç�
 ![Simulação do sistema](./simulacao.gif)
 
 
+
 ```cpp
 if (umidade < 30 || !fosforo || !potassio || ph < 5.5 || ph > 7.5) {
   digitalWrite(RELE_PIN, HIGH); // Liga a bomba
 } else {
   digitalWrite(RELE_PIN, LOW);  // Desliga a bomba
 }
-
+```
 
 # 📦 Entrega 2 - Armazenamento de Dados com Python e Banco SQL
 
