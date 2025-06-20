@@ -1,0 +1,1 @@
+// Código para ESP32 com display LCD e sensores
