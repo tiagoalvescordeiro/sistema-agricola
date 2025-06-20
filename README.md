@@ -1,104 +1,128 @@
-# 🚜 Projeto Hermes Reply IoT Failures – Fase 4 (FIAP 2025.1 – 1TIAO)
-[![Atualizar Docs e Deps](https://github.com/tiagoalvescordeiro/hermes_reply_iot_fase4_codex/actions/workflows/auto-update.yml/badge.svg)](https://github.com/tiagoalvescordeiro/hermes_reply_iot_fase4_codex/actions)
+# 🌾 FarmTech Solutions - Sistema Agrícola Inteligente (Fase 4)
 
+## 📚 Introdução
 
-Sistema inteligente de irrigação baseado em IoT e Machine Learning, utilizando ESP32, sensores virtuais, modelo preditivo com Scikit-learn, interface com Streamlit e dashboard em tempo real. Este projeto é a continuação da Fase 3 da FarmTech Solutions, agora com foco em otimização, visualização e automação.
+Este repositório corresponde à **Fase 4** do projeto da startup fictícia **FarmTech Solutions**, desenvolvido como parte da disciplina de Inteligência Artificial da FIAP.
 
----
-
-## 📌 Visão Geral
-
-Nesta fase, aprimoramos a aplicação integrando:
-
-- ✅ Predição de falha de sensores com **Scikit-learn**
-- ✅ Interface interativa com **Streamlit**
-- ✅ Hardware simulado com **ESP32 + Display LCD (I2C)**
-- ✅ Gráfico em tempo real com **Serial Plotter**
-- ✅ Banco de dados relacional e estrutura de dados em arquivos
-- ✅ **Pipeline de automação no GitHub Actions**
+O projeto evolui a solução criada na Fase 3, implementando recursos avançados de **Data Science aplicada ao agronegócio**, com integração de sensores, predição de irrigação com **Scikit-learn**, visualização em tempo real com **Streamlit**, monitoramento via **Serial Plotter**, display **LCD I2C no Wokwi** e **otimizações de código C++ no ESP32**.
 
 ---
 
-## 🧠 Inteligência Artificial com Scikit-learn
+## 🎯 Objetivos da Fase 4
 
-- Modelo: `RandomForestClassifier`
-- Features: temperatura, vibração (x, y, z), umidade
-- Output: probabilidade de falha
-- Treinamento feito localmente com dados simulados
-- Código disponível em `scripts/modelo.py`
+- 💡 Aplicar **Machine Learning com Scikit-learn** para prever a necessidade de irrigação;
+- 🖥️ Desenvolver um **Dashboard interativo com Streamlit**;
+- 📟 Integrar **display LCD via barramento I2C no Wokwi** para exibir métricas em tempo real;
+- 📈 Monitorar sensores com **Serial Plotter** no ambiente do ESP32;
+- ⚙️ Otimizar o uso de memória no código C/C++ do microcontrolador;
+- 🔗 Consolidar e integrar os dados ao banco de dados relacional da FarmTech Solutions;
+- 🎥 Documentar e demonstrar via vídeo o funcionamento da solução.
 
 ---
 
-## 📊 Interface com Streamlit
+## 🛠️ Tecnologias Utilizadas
 
-A interface do usuário está localizada em `streamlit-app/app.py`. Execute com:
+| Componente       | Descrição                                      |
+|------------------|-----------------------------------------------|
+| ESP32 + Wokwi    | Simulação de sensores físicos                 |
+| Python 3         | Linguagem principal do backend                 |
+| Streamlit        | Interface gráfica web para visualização       |
+| Scikit-learn     | Biblioteca de aprendizado de máquina           |
+| SQLite / MySQL   | Banco de dados relacional                     |
+| C/C++            | Lógica embarcada no ESP32                     |
+| Serial Plotter   | Monitoramento de sinais dos sensores          |
+| GitHub           | Versionamento e documentação                  |
 
-```bash
-cd streamlit-app
-streamlit run app.py
-A aplicação coleta valores de sensores e retorna a probabilidade de falha com base no modelo treinado.
+---
 
-🧪 API Flask (opcional)
-Disponível em api-flask/, permite chamadas REST para a predição, podendo ser integrada com outras aplicações, sensores físicos ou interfaces.
+## 📦 Estrutura do Repositório
 
-💡 Simulação no Wokwi com ESP32
-Utilizamos ESP32 simulando sensores de umidade e nutrientes
-
-Exibição de dados em LCD 16x2 com barramento I2C
-
-Gráficos em tempo real via Serial Plotter
-
-Código otimizado em C++ disponível em hardware/fase4.ino
-
-🔧 Otimizações no Código do ESP32
-Tipos de dados ajustados para economia de memória (int8_t, float, const)
-
-Variáveis globais revisadas
-
-Comentários incluídos justificando otimizações
-
-🖼️ Imagens do Wokwi
-Display LCD com dados do sensor
-
-
-Serial Plotter com gráfico de umidade
-
-
-🧩 Banco de Dados e Estrutura
-Estrutura relacional armazenada em database/
-
-Scripts SQL ou estrutura em CSV/JSON
-
-Utilizado para armazenar histórico das leituras e falhas
-
-🎬 Demonstração em Vídeo
-📺 Clique aqui para assistir ao vídeo no YouTube (modo não listado)
-
-🛠️ Execução da Pipeline (CI/CD)
-O projeto conta com uma automação via GitHub Actions, responsável por:
-
-Atualizar automaticamente o requirements.txt
-
-Committar e dar push nas dependências
-
-Rastrear mudanças em arquivos .py, .md e .txt
-
-📁 Estrutura do Repositório
-bash
-Copiar
-Editar
-├── api-flask/               # Backend com Flask
-├── hardware/                # Código otimizado ESP32 + LCD
-│   ├── fase4.ino
-│   └── prints_lcd/
-├── scripts/                 # Código Python com Scikit-learn
-├── streamlit-app/           # Interface interativa com Streamlit
-│   ├── app.py
-│   └── requirements.txt
-├── .github/workflows/       # CI/CD com GitHub Actions
-│   └── auto-update.yml
+```
+sistema-agricola/
+│
+├── fase4/
+│   ├── esp32/
+│   │   └── main.cpp         # Código otimizado do ESP32
+│   │   └── lcd_display.ino  # Integração com display LCD
+│   │
+│   ├── python/
+│   │   └── streamlit_app.py # Interface interativa
+│   │   └── model.pkl        # Modelo preditivo treinado
+│   │   └── train_model.py   # Treinamento com Scikit-learn
+│   │
+│   ├── database/
+│   │   └── schema.sql       # Estrutura do banco de dados
+│   │   └── insert_data.py   # Inserção e coleta de dados
+│
+├── imagens/
+│   └── serial_plotter.png   # Gráficos do monitoramento
+│   └── lcd_print.png        # Display Wokwi em funcionamento
+│
 ├── README.md
-└── package.json             # Dependências auxiliares
+└── video_apresentacao.mp4   # Link do vídeo no YouTube
+```
+
+---
+
+## 🤖 Modelo de Machine Learning
+
+Utilizamos um modelo de classificação Random Forest, treinado com dados simulados de umidade e nutrientes do solo. O modelo realiza predições sobre a **necessidade de irrigação nas próximas horas** com base em padrões históricos.
+
+> 📁 O modelo está salvo como `model.pkl` e pode ser carregado pelo Streamlit.
+
+---
+
+## 📊 Streamlit – Dashboard Interativo
+
+A interface web foi desenvolvida com Streamlit, permitindo:
+- Visualização dos dados dos sensores;
+- Gráficos de histórico e predições;
+- Integração com banco de dados para exibição de registros anteriores;
+- Interface amigável para agricultores.
+
+> 🎯 Execute com: `streamlit run streamlit_app.py`
+
+---
+
+## 🖥️ Integração com LCD no Wokwi
+
+- Display LCD 16x2 integrado via barramento I2C (pinos SDA/SCL);
+- Exibe em tempo real:
+  - Umidade do solo
+  - Nível de nutrientes
+  - Status da irrigação
+
+📷 Imagem da simulação:
+
+![Display LCD no Wokwi](imagens/lcd_print.png)
+
+---
+
+## 📈 Monitoramento via Serial Plotter
+
+Implementado monitoramento gráfico da variável de umidade em tempo real no ambiente do ESP32:
+
+![Serial Plotter](imagens/serial_plotter.png)
+
+---
+
+## ⚙️ Otimização no ESP32
+
+- Tipos de dados ajustados: uso de `uint8_t` e `float` apenas quando necessário;
+- Redução de variáveis globais;
+- Comentários no código justificando otimizações.
+
+📂 Código principal: `fase4/esp32/main.cpp`
+
+---
+
+## 🧠 Banco de Dados
+
+- Estrutura otimizada com tabelas para sensores, eventos de irrigação e logs;
+- Armazenamento de dados históricos para uso no modelo de ML;
+- Scripts disponíveis em `fase4/database/`.
+
+
 
 ## 👨‍💻 Integrantes do Grupo – 1TIAO
 
@@ -110,9 +134,26 @@ Editar
 | Thiago Henrique Pereira de Almeida Santos       | RM563327 |
 | Leandro Arthur Marinho Ferreira                 | RM565240 |
 
+---
 
-Projeto desenvolvido para a disciplina Inteligência Artificial Aplicada
-FIAP – Fase 4 – 2025.1
+## ✅ Conclusão
 
-💬 Contato
-Dúvidas ou sugestões? Entre em contato conosco por GitHub.
+A **Fase 4** da FarmTech Solutions marca um salto em inteligência, eficiência e usabilidade, demonstrando como a integração entre sensores, algoritmos de IA, banco de dados e interfaces pode revolucionar a agricultura de precisão.
+
+Este projeto é um passo concreto em direção à **transformação digital no campo**, aliando tecnologia à sustentabilidade e produtividade.
+
+---
+
+## 📌 Requisitos para Execução
+
+- Python 3.9+
+- Scikit-learn
+- Streamlit
+- SQLite ou MySQL
+- Simulador Wokwi
+
+---
+
+## 📝 Licença
+
+Projeto acadêmico sob licença MIT. Uso restrito à FIAP e fins educacionais.
